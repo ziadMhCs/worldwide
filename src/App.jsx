@@ -1,4 +1,4 @@
-//2-implement the cities list
+//3-implement the countries list
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import Product from "./pages/product";
 import HomePage from "./pages/HomePage";
@@ -8,6 +8,7 @@ import AppLayout from "./pages/AppLayout";
 import Login from "./pages/Login";
 import CityList from "./components/CityList";
 import { useEffect, useState } from "react";
+import CountriesList from "./components/CountryList";
 
 const BASE_URL= "http://localhost:9000"
 export default function App() {
@@ -47,7 +48,7 @@ finally{
           <Route path="/app" element={<AppLayout />}>
           <Route index  element={<p>default nested route</p>} cities={cities} isLoading={isLoading} />
             <Route path="cities" element={<CityList cities={cities} isLoading={isLoading}/>} />
-            <Route path="countries" element={<p>countries</p>} />
+            <Route path="countries" element={<CountriesList cities={cities} isLoading={isLoading}/>} />
             <Route path="form" element={<p>form</p>} />
           </Route>
           <Route path="/login" element={<Login />} />
