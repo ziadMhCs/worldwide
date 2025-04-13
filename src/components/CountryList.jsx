@@ -21,7 +21,7 @@ return(
             <ul className={styles.countryList}>
             {countries.map((country)=><CountryItem  
             
-            country={country}/> )}
+            country={country} key={country.country}/> )}
 
         </ul>
         )
